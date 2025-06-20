@@ -17,23 +17,25 @@
 </head>
 <!--Styling using office ui fabric-->
 <body class="ms-font-m ms-welcome ms-Fabric">
-
-    <header class="ms-welcome__header ms-bgColor-neutralLighter">
-        <h1 class="ms-font-xl">Auto Medfill</h1>
-    </header>
     <!--Main content area--> 
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <!--Button-->
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+    <main id="app-body" class="ms-welcome__main">
+    <header class="ms-welcome__header">
+        <h1 class="ms-font-xxl">Autofill Meds</h1>
+    </header>
+    <!--Buttons-->
+    <div class="button-row">
+        <!-- Button to start the autofill process -->
+        <div id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
             <span class="ms-Button-label">Run</span>
         </div>
-        <div role="button" id="stop" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+        <!-- Button to stop the autofill process -->
+        <div id="stop" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
             <span class="ms-Button-label">Stop</span>
         </div>
-        <!--Suggestions container-->
-        <div id="suggestions" class="suggestions-container"></div>
+    </div>
+    <!--Suggestions container-->
+    <div id="suggestions" class="suggestions-container"></div>
     </main>
-
 </body>
 
 </html>
