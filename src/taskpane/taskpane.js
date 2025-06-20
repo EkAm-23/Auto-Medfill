@@ -5,22 +5,63 @@ const wordList = [
 Office.onReady((info) => {
   if (info.host === Office.HostType.Word) {
     document.getElementById("app-body").style.display = "flex";
-    document.getElementById("run").onclick = showSuggestions;
+    document.getElementById("run").onclick = enableSuggestionListener;
+    document.getElementById("stop").onclick = disableSuggestionListener;
     console.log("Office is ready.");
   }
 });
-async function showSuggestions() {
-  return Word.run(async (context) => {
+// Enable the listener
+async function enableSuggestionListener() {
+  await Word.run(async (context) => {
+    Office.context.document.addHandlerAsync(
+      Office.EventType.DocumentSelectionChanged,
+      onSelectionChange,
+      (result) => {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+          console.log("Suggestion listener attached.");
+        } else {
+          console.error("Failed to attach listener:", result.error.message);
+        }
+      }
+    );
+  });
+}
+
+// Disable the listener
+async function disableSuggestionListener() {
+  await Word.run(async (context) => {
+    Office.context.document.removeHandlerAsync(
+      Office.EventType.DocumentSelectionChanged,
+      { handler: onSelectionChange },
+      (result) => {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+          console.log("Suggestion listener removed.");
+          document.getElementById("suggestions").style.display = "none";
+        } else {
+          console.error("Failed to remove listener:", result.error.message);
+        }
+      }
+    );
+  });
+}
+
+// The actual handler function
+async function onSelectionChange() {
+  await Word.run(async (context) => {
     const selection = context.document.getSelection();
     selection.load("text");
     await context.sync();
 
-    var text = selection.text || "";
-    text = text.trim();
+    const text = selection.text.trim();
+    if (!text) {
+      document.getElementById("suggestions").style.display = "none";
+      return;
+    }
     const matches = searchDataset(text);
-    renderDropdown(matches);
+    renderDropdown(matches, text);
   });
 }
+
 async function insertSuggestion(suggestion) {
   return Word.run(async (context) => {
     const range = context.document.getSelection();
