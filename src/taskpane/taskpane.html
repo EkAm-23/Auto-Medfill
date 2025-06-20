@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auto Medfill</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <!-- Template styles -->
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.0/fabric.min.css" />
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.0/fabric.components.min.css" />
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+<!--Styling using office ui fabric-->
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <h1 class="ms-font-su">Auto Medfill</h1>
+    </header>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+
+        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Run</span>
+        </div>
+        <div id="suggestions" class="suggestions-container"></div>
+    </main>
+</body>
+
+</html>
