@@ -77,10 +77,4 @@ function renderDropdown(matches) {
   });
 
   container.style.display = "block";
-  document.addEventListener("click", (event) => {
-    const container = document.getElementById("suggestions");
-    if (container && !container.contains(event.target)) {
-      container.style.display = "none";
-    }
-  });
 }
