@@ -1,5 +1,5 @@
 const wordList = [
-  "paracetamol","apple", "banana","banned","banshee", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"
+  "paracetamol","batman","apple", "banana","banned","banshee", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"
 ];
 
 Office.onReady((info) => {
