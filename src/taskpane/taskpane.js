@@ -1,7 +1,4 @@
-const wordList = [
-  "paracetamol","batman","apple", "banana","banned","banshee", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"
-];
-
+import {wordList} from "./data.js";
 Office.onReady((info) => {
   if (info.host === Office.HostType.Word) {
     document.getElementById("app-body").style.display = "flex";
