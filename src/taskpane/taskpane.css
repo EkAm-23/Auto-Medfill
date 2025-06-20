@@ -60,17 +60,16 @@ ul {
 
 /* === Suggestions Dropdown === */
 .suggestions-container {
-    display: none;
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    max-height: 200px;
-    overflow-y: auto;
-    width: 200px;
-    z-index: 1000;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+  display: none;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 220px;
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  align-self: center;
 }
 
 .suggestion {
