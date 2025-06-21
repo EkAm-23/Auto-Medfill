@@ -50,12 +50,31 @@ ul {
 /* Button label colors */
 .ms-Button.ms-Button--hero .ms-Button-label {
     color: #0078d7;
+    padding: 2px 3px;
 }
-
+/*changeing color on hover and focus*/
 .ms-Button.ms-Button--hero:hover .ms-Button-label,
 .ms-Button.ms-Button--hero:focus .ms-Button-label {
     color: #005a9e;
     cursor: pointer;
+    padding : 0px 3px;
+    background-color: rgb(215, 214, 214);
+    border-radius:2px;
+    /*fade effect on hover*/
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+}
+/*changeing color on clicking*/
+.ms-Button.ms-Button--hero:active .ms-Button-label {
+    color: #004578;
+    padding : 0px 3px;
+    background-color: rgb(94, 93, 93);
+    border-radius:2px;
+}
+.ms-welcome__status {
+   padding: 5px 5px;
+   font-size : 10px;
+   text-align: center;
 }
 
 /* === Suggestions Dropdown === */

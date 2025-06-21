@@ -9,6 +9,8 @@ Office.onReady((info) => {
 });
 // Enable the listener
 async function enableSuggestionListener() {
+  //change the status to select text for suggestions
+  document.getElementById("status").textContent = "Select text to get suggestions";
   await Word.run(async (context) => {
     Office.context.document.addHandlerAsync(
       Office.EventType.DocumentSelectionChanged,
@@ -26,6 +28,8 @@ async function enableSuggestionListener() {
 
 // Disable the listener
 async function disableSuggestionListener() {
+  //change the status to default
+  document.getElementById("status").textContent = "Listener disabled. Click 'Run' to enable again.";
   await Word.run(async (context) => {
     Office.context.document.removeHandlerAsync(
       Office.EventType.DocumentSelectionChanged,
