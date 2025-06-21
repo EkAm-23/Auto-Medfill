@@ -1,4 +1,4 @@
-import {wordList} from "./data.js";
+import {wordList} from "./cleaned_medicine_list.js";
 Office.onReady((info) => {
   if (info.host === Office.HostType.Word) {
     document.getElementById("app-body").style.display = "flex";
@@ -90,7 +90,7 @@ function searchDataset(prefix) {
   for (let i = 0; i < size; i++) {
     const word = wordList[i].toLowerCase();
     if (word.startsWith(prefix)) {
-      matches.push(word);
+      matches.push(wordList[i]);
     }
   }
   return matches;
