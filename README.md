@@ -44,7 +44,7 @@ This will:
 
 ---
 
-## 🧩 Sideloading the Add-in
+## Sideloading the Add-in
 
 To load the add-in into Microsoft Word:
 
